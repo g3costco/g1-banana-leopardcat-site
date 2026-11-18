@@ -1,0 +1,188 @@
+/* =========================================================
+   共用外觀：所有頁面都使用這個檔案
+   想換配色，只要修改下面 :root 裡的顏色即可
+   ========================================================= */
+:root {
+  --color-main: #2f6b3a;      /* 山林綠：標題、按鈕 */
+  --color-accent: #a86a1c;    /* 香蕉黃（加深，文字用才看得清楚） */
+  --color-banana: #f2c230;    /* 香蕉黃：色塊、標記 */
+  --color-earth: #8a5a32;     /* 土地棕 */
+  --color-river: #2f7fa8;     /* 溪流藍 */
+  --color-bg: #fbfaf5;        /* 網頁背景 */
+  --color-soft: #eef4e6;      /* 淺色區塊 */
+  --color-text: #1f2a1f;      /* 內文文字 */
+  --color-muted: #55665a;     /* 次要文字 */
+  --radius: 12px;
+  --max-width: 960px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+img { max-width: 100%; height: auto; display: block; border-radius: var(--radius); }
+a { color: var(--color-main); }
+
+/* ---------- 導覽列 ---------- */
+.site-header { background: #fff; border-bottom: 1px solid #e3e8df; position: sticky; top: 0; z-index: 10; }
+.nav { max-width: var(--max-width); margin: 0 auto; padding: 0.8rem 1.2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.logo { font-weight: 700; font-size: 1.1rem; text-decoration: none; color: var(--color-text); }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; }
+.nav a { text-decoration: none; padding: 0.2rem 0; }
+.nav a[aria-current="page"] { font-weight: 700; border-bottom: 2px solid var(--color-main); }
+
+/* ---------- 主要內容 ---------- */
+main { max-width: var(--max-width); margin: 0 auto; padding: 1.5rem 1.2rem 3rem; }
+section { margin: 2.5rem 0; }
+h1 { font-size: 2rem; line-height: 1.3; margin: 0 0 0.8rem; }
+h2 { font-size: 1.4rem; margin: 2rem 0 0.6rem; color: var(--color-main); }
+h3 { font-size: 1.15rem; margin: 0.6rem 0 0.3rem; }
+.lead { font-size: 1.15rem; color: var(--color-muted); }
+
+/* ---------- 首頁封面 ---------- */
+.hero { background: var(--color-soft); border-radius: var(--radius); padding: 2.5rem 1.8rem; }
+.eyebrow { color: var(--color-accent); font-weight: 700; margin: 0 0 0.3rem; }
+.button { display: inline-block; margin-top: 0.8rem; padding: 0.6rem 1.4rem; background: var(--color-main); color: #fff; border-radius: 999px; text-decoration: none; font-weight: 700; }
+.button:hover { opacity: 0.9; }
+
+/* ---------- 卡片 ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+.card { background: #fff; border: 1px solid #e3e8df; border-radius: var(--radius); padding: 1rem; text-decoration: none; color: inherit; transition: transform 0.15s; }
+.card:hover { transform: translateY(-3px); }
+.card p { margin: 0; color: var(--color-muted); font-size: 0.95rem; }
+
+/* ---------- 圖片預留方塊（換成真正圖片後即可刪除） ---------- */
+.placeholder-img { background: #d9ddd5; color: #5b6b5d; border-radius: var(--radius); aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+.placeholder-img.large { aspect-ratio: 16 / 9; }
+
+figure { margin: 1.5rem 0; }
+figcaption { font-size: 0.9rem; color: var(--color-muted); margin-top: 0.4rem; }
+
+/* ---------- 表格 ---------- */
+table { width: 100%; border-collapse: collapse; background: #fff; font-size: 0.95rem; }
+th, td { border: 1px solid #dfe5da; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+th { background: var(--color-soft); }
+
+/* ---------- 頁尾 ---------- */
+.site-footer { text-align: center; color: var(--color-muted); font-size: 0.9rem; padding: 1.5rem 1rem; border-top: 1px solid #e3e8df; }
+.site-footer p { margin: 0.2rem 0; }
+
+/* ---------- 手機版 ---------- */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.6rem; }
+  .hero { padding: 1.8rem 1.2rem; }
+  table { font-size: 0.85rem; }
+}
+
+/* =========================================================
+   第一組「蕉換未來」新增樣式
+   ========================================================= */
+
+/* 首頁封面大圖 */
+.hero-image { position: relative; border-radius: var(--radius); overflow: hidden; margin-bottom: 1.2rem; }
+.hero-image img { border-radius: 0; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; }
+.hero-image .credit { position: absolute; right: 0.5rem; bottom: 0.4rem; font-size: 0.75rem; color: #fff; background: rgba(0,0,0,0.45); padding: 0.1rem 0.5rem; border-radius: 6px; }
+.card img { aspect-ratio: 16 / 10; object-fit: cover; }
+.hall-tag { display: inline-block; background: var(--color-banana); color: #3a2a00; font-weight: 700; font-size: 0.85rem; padding: 0.1rem 0.7rem; border-radius: 999px; }
+
+/* 待補標記：組員完成後把整個區塊換掉 */
+.todo { border: 2px dashed var(--color-earth); background: #fbf3e8; border-radius: var(--radius); padding: 1rem 1.2rem; }
+.todo::before { content: "【待補】"; font-weight: 700; color: var(--color-earth); display: block; }
+.verify { background: #eef5fa; border-left: 4px solid var(--color-river); padding: 0.8rem 1rem; border-radius: 6px; }
+
+/* 兩欄排版 */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+
+/* 資訊卡 */
+.facts { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; }
+.facts li { background: #fff; border: 1px solid #e3e8df; border-radius: var(--radius); padding: 0.8rem 1rem; }
+.facts strong { display: block; color: var(--color-main); }
+
+/* 大數字卡 */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+.stat { background: var(--color-soft); border-radius: var(--radius); padding: 1rem; text-align: center; }
+.stat .num { font-size: 2.2rem; font-weight: 800; color: var(--color-main); line-height: 1.2; }
+.stat p { margin: 0.3rem 0 0; color: var(--color-muted); font-size: 0.95rem; }
+
+/* 示意地圖 */
+.map-wrap { background: #fff; border: 1px solid #e3e8df; border-radius: var(--radius); padding: 0.8rem; }
+.map-wrap svg { width: 100%; height: auto; display: block; }
+.map-point { cursor: pointer; }
+.map-point:focus { outline: none; }
+.map-point:focus circle, .map-point:hover circle { stroke: #1f2a1f; stroke-width: 3; }
+.map-info { min-height: 3.5rem; background: var(--color-soft); border-radius: 8px; padding: 0.6rem 0.9rem; margin-top: 0.6rem; }
+
+/* 翻牌卡 */
+.flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.flip { display: block; width: 100%; perspective: 900px; background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; min-height: 170px; text-align: left; }
+.flip-inner { display: block; position: relative; width: 100%; height: 100%; min-height: 170px; transition: transform 0.5s; transform-style: preserve-3d; }
+.flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back { position: absolute; inset: 0; border-radius: var(--radius); padding: 1rem; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; }
+.flip-front { background: var(--color-main); color: #fff; font-size: 1.2rem; font-weight: 700; }
+.flip-front small { font-weight: 400; font-size: 0.85rem; opacity: 0.85; margin-top: 0.4rem; }
+.flip-back { background: #fff; border: 2px solid var(--color-main); transform: rotateY(180deg); font-size: 0.95rem; }
+@media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } }
+
+/* 時間軸 */
+.timeline { list-style: none; padding: 0 0 0 1.2rem; border-left: 3px solid var(--color-banana); }
+.timeline li { position: relative; margin: 0 0 1rem; padding-left: 0.6rem; }
+.timeline li::before { content: ""; position: absolute; left: -1.75rem; top: 0.55rem; width: 0.9rem; height: 0.9rem; border-radius: 50%; background: var(--color-main); }
+.timeline .year { font-weight: 800; color: var(--color-main); margin-right: 0.4rem; }
+
+/* 變身步驟 */
+.stepper { background: #fff; border: 1px solid #e3e8df; border-radius: var(--radius); padding: 1rem; }
+.stepper-dots { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+.stepper-dots button { border: 2px solid var(--color-main); background: #fff; color: var(--color-main); border-radius: 999px; width: 2.2rem; height: 2.2rem; font-weight: 700; cursor: pointer; }
+.stepper-dots button[aria-current="step"] { background: var(--color-main); color: #fff; }
+.step-panel[hidden] { display: none; }
+.step-panel img { max-height: 380px; width: auto; margin: 0 auto; }
+.stepper-nav { display: flex; justify-content: space-between; margin-top: 0.8rem; }
+.stepper-nav button, .btn { border: 0; background: var(--color-main); color: #fff; border-radius: 999px; padding: 0.45rem 1.2rem; font: inherit; font-weight: 700; cursor: pointer; }
+.stepper-nav button:disabled { opacity: 0.35; cursor: default; }
+
+/* 雙循環圖 */
+.loop { position: relative; width: min(100%, 460px); aspect-ratio: 1; margin: 1rem auto; }
+.loop::before { content: ""; position: absolute; inset: 14%; border: 4px dashed var(--color-banana); border-radius: 50%; }
+.loop-center { position: absolute; inset: 34%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; color: var(--color-earth); font-size: 0.95rem; }
+.loop-node { position: absolute; width: 30%; transform: translate(-50%, -50%); border: 0; border-radius: 999px; padding: 0.5rem 0.4rem; font: inherit; font-size: 0.85rem; font-weight: 700; line-height: 1.3; color: #fff; background: var(--color-main); cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+.loop-node[aria-pressed="true"] { background: var(--color-river); outline: 3px solid var(--color-banana); }
+.loop-detail { background: var(--color-soft); border-radius: var(--radius); padding: 1rem 1.2rem; min-height: 6rem; }
+
+/* 低碳計算機 */
+.calc { background: #fff; border: 1px solid #e3e8df; border-radius: var(--radius); padding: 1rem 1.2rem; }
+.calc label { font-weight: 700; display: block; margin-top: 0.6rem; }
+.calc input, .calc select, .pledge input[type="text"] { font: inherit; padding: 0.4rem 0.6rem; border: 1px solid #c9d1c4; border-radius: 8px; width: 100%; max-width: 320px; }
+.bars { margin-top: 1rem; }
+.bar-row { display: grid; grid-template-columns: 8.5rem 1fr 5.5rem; gap: 0.5rem; align-items: center; margin: 0.35rem 0; font-size: 0.9rem; }
+.bar { height: 1rem; background: #d9ddd5; border-radius: 999px; overflow: hidden; }
+.bar span { display: block; height: 100%; background: var(--color-river); border-radius: 999px; transition: width 0.4s; }
+.bar-row.is-selected { font-weight: 700; }
+.bar-row.is-selected .bar span { background: var(--color-main); }
+.calc-result { font-size: 1.1rem; margin-top: 0.8rem; }
+.note { font-size: 0.85rem; color: var(--color-muted); }
+
+/* 承諾牆 */
+.pledge { background: #fff; border: 1px solid #e3e8df; border-radius: var(--radius); padding: 1rem 1.2rem; }
+.pledge fieldset { border: 0; padding: 0; margin: 0 0 0.6rem; }
+.pledge legend { font-weight: 700; margin-bottom: 0.3rem; }
+.pledge-option { display: block; margin: 0.2rem 0; }
+.wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 0.7rem; margin-top: 1rem; padding: 0; list-style: none; }
+.wall li { background: #fff8d9; border-radius: 6px; padding: 0.7rem 0.8rem; box-shadow: 0 2px 4px rgba(0,0,0,0.08); font-size: 0.92rem; }
+.wall li:nth-child(3n+2) { background: #e6f2e2; }
+.wall li:nth-child(3n) { background: #e3eef6; }
+.wall b { display: block; }
+
+@media (max-width: 700px) {
+  .split { grid-template-columns: 1fr; }
+  .bar-row { grid-template-columns: 6.5rem 1fr 4.8rem; }
+  .loop-node { font-size: 0.75rem; width: 34%; }
+}
+.split figure img { width: 100%; max-height: 440px; object-fit: cover; }

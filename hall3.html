@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>展廳三 永續的未來｜蕉換未來：點燃石虎棲地與農業的共生革命</title>
+  <meta name="description" content="第一組線上策展：集集山蕉、石虎棲地與香蕉假莖再生的里山共生故事。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主選單">
+      <a class="logo" href="index.html">🍌 蕉換未來</a>
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="hall1.html">展廳一 土地的呼吸</a></li>
+        <li><a href="hall2.html">展廳二 綠色的重生</a></li>
+        <li><a href="hall3.html" aria-current="page">展廳三 永續的未來</a></li>
+        <li><a href="about.html">關於本展</a></li>
+        <li><a href="sources.html">參考資料與授權</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 負責人：蕭宇庭 -->
+    <section class="hero">
+      <p class="eyebrow">展廳三</p>
+      <h1>永續的未來——你的參與即是保育</h1>
+      <p class="lead">石虎、香蕉、土地和你，其實在同一個循環裡。點開每一個節點，看看你能在哪裡出一份力。</p>
+    </section>
+
+    <section>
+      <h2>雙循環互動圖</h2>
+      <p>點一下圓圈上的節點，看看它怎麼帶動下一站。</p>
+      <div class="loop">
+        <div class="loop-center">土地 × 生態<br>材料 × 消費</div>
+        <button class="loop-node" type="button" aria-pressed="false" data-title="友善石虎生態給付" data-detail="農地符合友善條件可申請每公頃每年 2 萬元給付，拍到石虎再加 1 萬元；社區巡守隊每年 6 萬元。農友友善耕作也能有收入。">友善石虎生態給付</button>
+        <button class="loop-node" type="button" aria-pressed="false" data-title="棲地保護／無毒廊道" data-detail="不用除草劑、老鼠藥、毒餌與不友善網具，田間保留草生，讓農地成為石虎移動的安全通道。">棲地保護／無毒廊道</button>
+        <button class="loop-node" type="button" aria-pressed="false" data-title="土地健康" data-detail="減少化學藥劑、保留地被植物，土壤生物與食物鏈慢慢恢復，土地更有生命力。">土地健康</button>
+        <button class="loop-node" type="button" aria-pressed="false" data-title="假莖纖維再生" data-detail="採收後的香蕉假莖抽成纖維，做成蕉布與工藝品；殘渣還能做成可分解果袋。">假莖纖維再生</button>
+        <button class="loop-node" type="button" aria-pressed="false" data-title="綠色消費與旅遊" data-detail="購買友善標章產品、參加體驗、低碳前往集集，讓收入回到友善農友與工坊，循環就能繼續轉下去。">綠色消費與旅遊</button>
+      </div>
+      <div class="loop-detail" id="loop-detail" aria-live="polite"><p>從任何一個節點開始都可以。</p></div>
+    </section>
+
+    <section>
+      <h2>低碳里程計算機</h2>
+      <form class="calc" id="calc" onsubmit="return false">
+        <label for="km">出發地到集集的距離（公里，單程）</label>
+        <input id="km" type="number" min="0" max="2000" step="1" value="60" inputmode="numeric">
+        <label for="mode">你打算怎麼去？</label>
+        <select id="mode"></select>
+        <p class="calc-result" id="calc-result" aria-live="polite"></p>
+        <div class="bars" id="bars" aria-label="各種交通方式碳排放比較"></div>
+        <p class="note">係數單位：公克 CO2e／人公里。臺鐵數值來自臺鐵碳足跡標籤；機車（78）、汽車單人（150）為教學估算值，實際依車種與載客數而不同。</p>
+      </form>
+    </section>
+
+    <section>
+      <h2>永續承諾牆</h2>
+      <form class="pledge" id="pledge-form">
+        <fieldset>
+          <legend>選一個你願意做到的承諾</legend>
+          <label class="pledge-option"><input type="radio" name="pledge" value="我會優先購買友善石虎標章的農產品"> 我會優先購買友善石虎標章的農產品</label>
+          <label class="pledge-option"><input type="radio" name="pledge" value="我會搭火車或騎單車到集集"> 我會搭火車或騎單車到集集</label>
+          <label class="pledge-option"><input type="radio" name="pledge" value="開車經過淺山道路時，我會放慢速度、注意動物"> 開車經過淺山道路時，我會放慢速度、注意動物</label>
+          <label class="pledge-option"><input type="radio" name="pledge" value="我不會餵食或棄養流浪犬貓"> 我不會餵食或棄養流浪犬貓</label>
+          <label class="pledge-option"><input type="radio" name="pledge" value="我會把這個展覽分享給一位朋友"> 我會把這個展覽分享給一位朋友</label>
+        </fieldset>
+        <label for="nickname">你的暱稱（可不填）</label><br>
+        <input id="nickname" type="text" maxlength="20" placeholder="例如：愛山蕉的阿明">
+        <p><button class="btn" type="submit">貼上承諾牆</button> <span id="pledge-msg" aria-live="polite"></span></p>
+        <p class="note">這面牆只存在你自己的瀏覽器裡，別人看不到。想讓所有觀眾共享，可改用 Google 表單嵌入（見 README）。</p>
+      </form>
+      <ul class="wall" id="wall" aria-label="承諾牆"></ul>
+    </section>
+
+    <section>
+      <h2>走一趟低碳集集</h2>
+      <figure>
+        <img src="images/jiji-station-banner.jpg" alt="集集車站檜木站房正面" loading="lazy">
+        <figcaption>集集車站。攝影：王彥翔，CC BY-SA 3.0</figcaption>
+      </figure>
+      <p>建議路線：集集車站 → 步行或騎單車 → 蕉織環創坊 → 集元果觀光工廠 → 回到車站。</p>
+      <div class="todo"><p>請實地走一次，補上各段距離、交通時間與沿途照片；營業時間出發前再查詢。</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>數位人文地方策展專題實作｜第一組　蕭宇庭、王韋婷、王婕羽</p>
+    <p>本網站部分文字由 AI 協助草擬，經組員查證與改寫；詳見 <a href="sources.html">參考資料與授權</a></p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
